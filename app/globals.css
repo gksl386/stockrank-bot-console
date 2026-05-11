@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #fafaf9;
+  --color-foreground: #18181b;
+}
+
+html, body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: system-ui, -apple-system, "Segoe UI", "Apple SD Gothic Neo", "Pretendard", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d4d4d8;
+  border-radius: 4px;
+}

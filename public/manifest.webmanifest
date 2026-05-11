@@ -1,0 +1,30 @@
+{
+  "name": "StockRank BotConsole",
+  "short_name": "BotConsole",
+  "description": "봇 군단 사령탑 — 헌법 v1.1 / Phase 0",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fafaf9",
+  "theme_color": "#18181b",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    { "name": "상황판", "url": "/" },
+    { "name": "비용", "url": "/budget" },
+    { "name": "발행 큐", "url": "/queue" }
+  ]
+}
