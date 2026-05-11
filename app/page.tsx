@@ -24,9 +24,9 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
 
   return (
     <div className="space-y-6">
-      <header className="flex items-end justify-between">
+      <header className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">상황판</h1>
+          <h1 className="text-xl font-semibold tracking-tight md:text-2xl">상황판</h1>
           <p className="mt-1 text-sm text-zinc-500">BotConsole Tier 1 #1 — 5초 한판 조망</p>
         </div>
         <HealthIndicator health={health} />

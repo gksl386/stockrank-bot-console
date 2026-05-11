@@ -1,13 +1,14 @@
 {
   "name": "StockRank BotConsole",
   "short_name": "BotConsole",
-  "description": "봇 군단 사령탑 — 헌법 v1.1 / Phase 0",
+  "description": "StockRank 봇 군단 사령탑 — 24/7 자동화 모니터링/제어 (헌법 v1.1)",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "any",
+  "orientation": "portrait",
   "background_color": "#fafaf9",
   "theme_color": "#18181b",
+  "lang": "ko",
   "icons": [
     {
       "src": "/icons/icon-192.png",
@@ -20,11 +21,18 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
     }
   ],
   "shortcuts": [
-    { "name": "상황판", "url": "/" },
-    { "name": "비용", "url": "/budget" },
-    { "name": "발행 큐", "url": "/queue" }
+    { "name": "상황판", "url": "/", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "스케줄", "url": "/schedules", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "비용", "url": "/budget", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "발행 큐", "url": "/queue", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
   ]
 }

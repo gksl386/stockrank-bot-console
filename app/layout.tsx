@@ -23,15 +23,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="flex min-h-screen">
           <Sidebar />
           <main className="flex-1 overflow-x-hidden">
-            <div className="flex h-14 items-center justify-between border-b border-zinc-200 bg-white px-6">
-              <div className="text-sm text-zinc-500">
+            <div className="flex h-14 items-center justify-between border-b border-zinc-200 bg-white pl-16 pr-4 md:px-6">
+              <div className="hidden text-sm text-zinc-500 md:block">
                 Tier 1 완성 / Tier 2 골격 / Tier 3 스키마
               </div>
-              <kbd className="rounded border border-zinc-200 bg-zinc-50 px-2 py-1 text-xs text-zinc-500">
+              <div className="text-sm font-medium text-zinc-700 md:hidden">BotConsole</div>
+              <kbd className="hidden rounded border border-zinc-200 bg-zinc-50 px-2 py-1 text-xs text-zinc-500 sm:inline-block">
                 ⌘K · Ctrl+K
               </kbd>
             </div>
-            <div className="p-6">{children}</div>
+            <div className="p-4 md:p-6">{children}</div>
           </main>
         </div>
         <CmdKProvider />
