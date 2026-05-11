@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import {
   LayoutDashboard,
   Bot,
+  CalendarClock,
   Coins,
   Inbox,
   Network,
@@ -16,10 +17,11 @@ import {
 import { cn } from '@/lib/utils';
 
 const TIER1 = [
-  { href: '/',         label: '상황판',    icon: LayoutDashboard },
-  { href: '/bots',     label: '봇 목록',   icon: Bot },
-  { href: '/budget',   label: '비용',      icon: Coins },
-  { href: '/queue',    label: '발행 큐',   icon: Inbox },
+  { href: '/',          label: '상황판',    icon: LayoutDashboard },
+  { href: '/bots',      label: '봇 목록',   icon: Bot },
+  { href: '/schedules', label: '스케줄',    icon: CalendarClock },
+  { href: '/budget',    label: '비용',      icon: Coins },
+  { href: '/queue',     label: '발행 큐',   icon: Inbox },
 ] as const;
 
 const TIER2 = [
