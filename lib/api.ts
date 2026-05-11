@@ -101,6 +101,43 @@ export const apiConsumeInsight = (insightId: string, consumerBotId: string): Pro
     body: JSON.stringify({ consumer_bot_id: consumerBotId }),
   });
 
+// === schedule (TASK 5.5 — Cloud Scheduler) ===
+export interface ScheduleMeta {
+  bot_id: string;
+  cron: string;
+  timezone: string;
+  enabled: boolean;
+  next_run_at: string | null;
+  state: string | null;
+  job_name: string | null;
+  description: string | null;
+}
+
+export interface ScheduleCreatePayload {
+  cron: string;
+  timezone?: string;
+  enabled?: boolean;
+  description?: string | null;
+}
+
+export const apiGetSchedule = (botId: string): Promise<ScheduleMeta | null> =>
+  request(`/bots/${encodeURIComponent(botId)}/schedule`);
+
+export const apiCreateSchedule = (botId: string, body: ScheduleCreatePayload): Promise<ScheduleMeta> =>
+  request(`/bots/${encodeURIComponent(botId)}/schedule`, {
+    method: 'POST',
+    body: JSON.stringify(body),
+  });
+
+export const apiDeleteSchedule = (botId: string): Promise<{ bot_id: string; deleted: boolean }> =>
+  request(`/bots/${encodeURIComponent(botId)}/schedule`, { method: 'DELETE' });
+
+export const apiPauseSchedule = (botId: string): Promise<{ bot_id: string; state: string }> =>
+  request(`/bots/${encodeURIComponent(botId)}/schedule/pause`, { method: 'POST' });
+
+export const apiResumeSchedule = (botId: string): Promise<{ bot_id: string; state: string }> =>
+  request(`/bots/${encodeURIComponent(botId)}/schedule/resume`, { method: 'POST' });
+
 // === SSE URL builders (EventSource는 lib/sse.ts) ===
 export const sseRunStreamUrl = (botId: string, runId: string) =>
   `${API_BASE}/bots/${encodeURIComponent(botId)}/runs/${encodeURIComponent(runId)}/stream`;
